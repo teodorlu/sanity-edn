@@ -9,7 +9,8 @@ The `sanity-edn` API is expected to change.
 
 Edit your `deps.edn` manually:
 
-    {:deps {io.github.teodorlu/sanity-edn {:mvn/version "TODO"}}}
+    {:deps {io.github.teodorlu/sanity-edn {:git/url "https://github.com/teodorlu/sanity-edn"
+                                           :git/sha "430082175970d2d94fa82e80fd674c63d7beeb44"}}}
 
 Or install with [neil](https://github.com/babashka/neil)
 
