@@ -6,13 +6,13 @@
 (defn client [opts]
   (doseq [k [:project-id :api-version :dataset :secret]]
     (assert (contains? opts k) (str "Option required: " k)))
-  (assoc opts ::client-valid true))
+  (assoc opts ::client-valid? true))
 
 
 (defn query
   "Run a GROQ query against a Sanity database."
   [client {:keys [query parameters]}]
-  (assert (::client-valid client))
+  (assert (::client-valid? client))
   (assert query)
   (let [{:keys [project-id api-version dataset secret]} client
         url (str "https://" project-id ".api.sanity.io/" api-version "/data/query/" dataset)
