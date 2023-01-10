@@ -3,7 +3,7 @@
 ## PRE-ALPHA STATUS
 
 `sanity-edn` is experimental software.
-The `sanity-edn` API is expected to change.
+The `sanity-edn` API may change.
 
 ## Dependency coordinates
 
