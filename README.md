@@ -2,7 +2,8 @@
 
 ## PRE-ALPHA STATUS
 
-`sanity-edn` is an experiment -- and doesn't work yet.
+`sanity-edn` is experimental software.
+As of 2023-01-10, consider reading the `sanity_edn.clj` rather than introducing a dependency.
 
 ## Dependency coordinates
 
@@ -38,3 +39,13 @@ Or install with [neil](https://github.com/babashka/neil)
 3. Should I do anything about GROQ other than allowing a raw string?
     - next.jdbc just uses raw strings -- and leaves fancy DSLs to other libraries
     - I could provide a narrow `teodorlu.sanity-edn.grow-builder` namespace to help with common stuff
+
+## Sanity configuration
+
+You may obtain a sanity secret from `https://www.sanity.io/organizations/YOUR_ORGANIZATION/project/YOUR_PROJECT`.
+
+## Sanity queries: GROQ
+
+Sanity has its own query language: GROQ.
+
+GROQ query documentation: https://www.sanity.io/docs/how-queries-work
