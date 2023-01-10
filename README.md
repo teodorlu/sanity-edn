@@ -3,7 +3,7 @@
 ## PRE-ALPHA STATUS
 
 `sanity-edn` is experimental software.
-As of 2023-01-10, consider reading the `sanity_edn.clj` rather than introducing a dependency.
+The `sanity-edn` API is expected to change.
 
 ## Dependency coordinates
 
