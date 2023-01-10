@@ -18,7 +18,7 @@ Or install with [neil](https://github.com/babashka/neil)
 ## Usage
 
 ``` clojure
-(ns yourapp
+(ns example
   (:require [teodorlu.sanity-edn :as sanity]))
 
 (defn lookup-your-sanity-secret [] ,,,)
@@ -32,7 +32,6 @@ Or install with [neil](https://github.com/babashka/neil)
               {:query "raw groq"
                :params {:startDate "2021-01-01T00:00:01Z"
                         :endDate "2022-01-01T00:00:01Z"}})
-
 ;; returns EDN
 ```
 
