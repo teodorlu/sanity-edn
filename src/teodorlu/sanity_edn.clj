@@ -8,9 +8,8 @@
     (assert (contains? opts k) (str "Option required: " k)))
   (assoc opts ::client-valid? true))
 
-
-(defn query
-  "Run a GROQ query against a Sanity database."
+(defn query-lowlevel
+  "Run a GROQ query against a Sanity database, return raw HTTP response"
   [client {:keys [query params]}]
   (assert (::client-valid? client))
   (assert query)
@@ -24,5 +23,14 @@
                                     :headers headers
                                     :body (json/generate-string {:query query :params params})})
                      deref)]
+    response))
+
+(defn query
+  "Run a GROQ query against a Sanity database, return parsed EDN"
+  [client {:keys [query params]}]
+  (assert (::client-valid? client))
+  (assert query)
+  (let [response (query-lowlevel client {:query query :params params})]
     (assert (= (:status response) 200))
-    (json/parse-string (:body response) keyword)))
+    (json/parse-string (:body (query-lowlevel client {:query query :params params}))
+                       keyword)))
